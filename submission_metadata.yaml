@@ -1,0 +1,51 @@
+team_name: "rishi-1603"
+
+primary_contact:
+  name: "Rishi"
+  email: "YOUR_EMAIL@gmail.com"
+  phone: "+91-9030657472"
+
+team_members:
+  - name: "Rishi"
+    email: "rishidappu16@gmail.com@gmail.com"
+    role: "Solo"
+
+github_repo: "https://github.com/rishi-1603/redrob-candidate-ranker"
+sandbox_link: "https://redrob-candidate-ranker-pa4mfgf94b5w2s6zgblxmr.streamlit.app/"
+
+reproduce_command: "python rank.py --candidates candidates.jsonl --out submission.csv"
+
+compute:
+  platform: "Windows PC"
+  cpu_cores: 4
+  ram_gb: 16
+  python_version: "3.10"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: false
+  pre_computation_time_minutes: 0
+
+ai_tools_used:
+  - "Claude"
+
+ai_usage_summary: |
+  Used Claude for architecture discussion, code review, and presentation deck.
+  All engineering decisions, scoring logic, and signal weights were designed
+  based on careful reading of the JD and submission spec. No candidate data
+  was fed to any LLM during the ranking step.
+
+methodology_summary: |
+  Rule-based multi-signal hybrid scorer with five components: career history
+  (35%), skills with anti-stuffing trust multiplier (30%), experience years
+  (15%), logistics/location (20%), and a behavioral multiplier (0.30-1.30x).
+  Career signal reads actual job descriptions for production AI evidence.
+  Honeypot detection blocks impossible profiles. Runtime: 15 seconds on CPU
+  for 100K candidates. No API calls, no GPU, pure Python stdlib.
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true
